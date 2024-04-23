@@ -17,7 +17,7 @@ const AddTaskForm = ({ onAddTask }) => {
     setDescription('');
     console.log(newTask);
     alert("Tarea agregada!");
-    alert(newTask);
+    //alert(newTask);
   };
 
   return (

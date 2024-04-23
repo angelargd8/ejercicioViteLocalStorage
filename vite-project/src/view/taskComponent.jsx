@@ -1,12 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import TaskList from '../component/taskList';
+import EditTaskForm from '../view/editTaskForm';
 
 const TaskComponent = ({ tasks, setTasks }) => {
-  /*const [tasks, setTasks] = useState([
-    { id: 1, title: 'Hacer la compra', description: 'Comprar alimentos para la semana' },
-    { id: 2, title: 'Lavar el coche', description: 'Limpiar el coche por fuera y por dentro' },
-  ]);*/
-  //const [tasks, setTasks] = useState([]);
+
+  const [editingTask, setEditingTask] = useState(null);
 
   const deleteTask = (taskId) => {
     const newTasks = tasks.filter(task => task.id !== taskId);
@@ -14,10 +12,25 @@ const TaskComponent = ({ tasks, setTasks }) => {
     localStorage.setItem('tasks', JSON.stringify(newTasks));
   };
 
+  const startEditingTask = (task) => {
+    setEditingTask(task);
+  };
+
+  const saveEditedTask = (editedTask) => {
+    const updatedTasks = tasks.map(task => task.id === editedTask.id ? editedTask : task);
+    setTasks(updatedTasks);
+    localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  };
+
   return (
     <div>
       <h1>Lista de Tareas</h1>
-      <TaskList tasks={tasks} onDeleteTask={deleteTask} />
+      {editingTask ? (
+      <EditTaskForm task={editingTask} onEditTask={saveEditedTask} />
+      ) : (
+      <TaskList tasks={tasks} onDeleteTask={deleteTask} onEditTask={startEditingTask} />
+      )}
+      
     </div>
   );
 };

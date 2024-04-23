@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 import TaskItem from './task';
 
-const TaskList = ({ tasks, onDeleteTask }) => {
+const TaskList = ({ tasks, onDeleteTask, onEditTask }) => {
   return (
     <div>
       {tasks.map(task => (
-        <TaskItem key={task.id} task={task} onDelete={() => onDeleteTask(task.id)} />
+        <TaskItem key={task.id} task={task} onDelete={() => onDeleteTask(task.id)} onEdit={() => onEditTask(task)}  />
       ))}
     </div>
   );
@@ -21,6 +21,7 @@ TaskList.propTypes = {
     })
   ).isRequired,
   onDeleteTask: PropTypes.func.isRequired,
+  onEditTask: PropTypes.func.isRequired,
 };
 
 export default TaskList;

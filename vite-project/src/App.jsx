@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks])
-  
+
   return (
     <div className='sitio-web'>
       <div className='header'>
@@ -29,7 +29,7 @@ function App() {
       </nav>
       </div>
       <div className='paginas'>
-          <Router ruta={rutaActual} setRoute={setRutaActual}  tasks={tasks} setTasks={setTasks}></Router> 
+          <Router ruta={rutaActual} setRoute={setRutaActual}  tasks={tasks} setTasks={setTasks}  ></Router> 
       </div>
     </div>
   )

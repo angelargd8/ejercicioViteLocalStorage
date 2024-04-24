@@ -23,9 +23,9 @@ function App() {
   return (
     <div className='sitio-web'>
       <div className='header'>
-      <nav style={{gap:"8px", display:"flex"}}>
-        <a href="/list" style={{border:"1px solid black", padding:"8px", borderRadius:"8px"}}>Lista de Tareas</a>
-        <a href="/add" style={{border:"1px solid black", padding:"8px", borderRadius:"8px"}} >Agregar Tarea</a>
+      <nav style={{ flexDirection: "row"}}>
+        <a href="/list" style={{border:"1px solid black", padding:"8px", borderRadius:"8px", color:"white"}}>Lista de Tareas</a>
+        <a href="/add" style={{border:"1px solid black", padding:"8px", borderRadius:"8px",color:"white"}} >Agregar Tarea</a>
       </nav>
       </div>
       <div className='paginas'>

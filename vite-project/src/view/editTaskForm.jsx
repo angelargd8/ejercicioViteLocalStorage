@@ -19,11 +19,15 @@ const EditTaskForm = ({ task, onEditTask  }) => {
     };
   
     return (
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-        <textarea type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-        <button type="submit">Guardar</button>
+    <div className="div">
+        <h3>Edicion de : {task.title}</h3>
+        <form onSubmit={handleSubmit}  style={{display: "inline-flex", flexDirection: "column", marginTop:"10%" }}>
+        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} style={{ marginTop:"10%" }}/>
+        <textarea type="text" value={description} onChange={(e) => setDescription(e.target.value)} style={{ marginTop:"10%", padding:"10%"}}/>
+        <button type="submit" style={{ marginTop:"10%" }}>Guardar</button>
       </form>
+    </div>
+      
     );
   };
 

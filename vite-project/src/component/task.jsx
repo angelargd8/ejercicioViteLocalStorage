@@ -11,9 +11,9 @@ const TaskItem = ({ task, onDelete , onEdit}) => {
     <div>
       <h3>{task.title}</h3>
       <p>{task.description}</p>
-      <div className="botones">
-        <button onClick={onDelete}>Eliminar</button>
-        <button onClick={handleEditClick}>editar</button>
+      <div className="botones" >
+        <button onClick={onDelete} >Eliminar</button>
+        <button onClick={handleEditClick} style={{ marginLeft:"5%" }}>editar</button>
       </div>
       
     </div>

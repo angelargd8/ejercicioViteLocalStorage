@@ -21,20 +21,27 @@ const AddTaskForm = ({ onAddTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{display: "inline-flex", flexDirection: "column"}}>
+    <div className="div">
+      <h3>Nueva tarea</h3><center/>
+      <form onSubmit={handleSubmit} style={{display: "inline-flex", flexDirection: "column"}}>
       <input
         type="text"
         placeholder="Título de la tarea"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        style={{ marginTop:"10%" }}
       />
       <textarea
         placeholder="Descripción de la tarea"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        style={{ marginTop:"10%" , padding:"10%"}}
       ></textarea>
-      <button type="submit">Agregar Tarea</button>
+      <button type="submit" style={{marginTop:"10%"}}>Agregar Tarea</button>
     </form>
+    <center/>
+    </div>
+    
   );
 };
 

@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 const EditTaskForm = ({ task, onEditTask  }) => {
@@ -14,9 +14,8 @@ const EditTaskForm = ({ task, onEditTask  }) => {
           description,
         };
         onEditTask(editedTask);
-        //console.log(newTask);
         alert("Tarea modificada!");
-        //navigate("/list");
+        window.location.href = "/list"
     };
   
     return (
@@ -27,6 +26,15 @@ const EditTaskForm = ({ task, onEditTask  }) => {
       </form>
     );
   };
+
+EditTaskForm.propTypes = {
+    task: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+      }).isRequired,
+      onEditTask: PropTypes.func.isRequired,
+};
 
 
 export default EditTaskForm;

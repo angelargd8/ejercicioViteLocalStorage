@@ -6,7 +6,7 @@ function App() {
 
   //const [tasks, setTasks] = useState([]);
   const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('tasks')) || []);
-
+ 
   const [rutaActual, setRutaActual] = useState("app")
   useEffect(() => {
     console.log("Se ha montado el componente")

@@ -2,7 +2,6 @@
 import TaskComponent from '../view/taskComponent'
 import PropTypes from 'prop-types';
 import AddTaskForm from '../view/addTaskForm';
-import EditTaskForm from '../view/editTaskForm';
 
 function Router({ ruta, setRoute , tasks, setTasks}) {
     //const [editingTask, setEditingTask] = useState(null);

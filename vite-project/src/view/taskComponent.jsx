@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import TaskList from '../component/taskList';
 import EditTaskForm from '../view/editTaskForm';
+import PropTypes from 'prop-types';
+
 
 const TaskComponent = ({ tasks, setTasks }) => {
 
@@ -33,6 +35,11 @@ const TaskComponent = ({ tasks, setTasks }) => {
       
     </div>
   );
+};
+
+TaskComponent.propTypes = {
+  tasks: PropTypes.array.isRequired,
+  setTasks: PropTypes.func.isRequired,
 };
 
 export default TaskComponent;
